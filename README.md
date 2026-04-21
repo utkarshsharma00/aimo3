@@ -8,7 +8,7 @@
 
 A negative results report documenting 25 submissions across 11 notebook configurations, 15 offline research branches, and a $300 GRPO fine-tuning experiment. The only intervention that produced a statistically defensible improvement above run-to-run noise was a 5-component weighted entropy voting function for self-consistency.
 
-- **Writeup:** [https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/writeups/every-improvement-failed-aimo3]
+- **Writeup:** [Kaggle Writeup link](https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/writeups/every-improvement-failed-aimo3)
 - **Paper:** `AIMO3_Writeup_flamingice.md` in this repo
 
 ## Model
