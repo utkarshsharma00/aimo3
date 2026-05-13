@@ -2,7 +2,7 @@
 
 **Writeup Prize submission for AI Mathematical Olympiad — Progress Prize 3**
 
-**Team:** flamingice (solo) · **Public LB:** 86th / 4,138 teams  · **Mean:** 40.78/50 (σ=1.20, n=9, best 43)
+**Team:** flamingice (solo) · **Public LB:** 86th / 4,138 teams  · **Mean:** 40.78/50 (σ=1.20, n=9, best 43) · **Private LB:** 41.5/50 and rank 828th / 4,138 teams
 
 ## What this is
 
