@@ -226,3 +226,106 @@ for st in ['easy', 'medium', 'hard', 'tie', 'minority_correct']:
 print(f"\n{'='*70}")
 print("COMPLETE")
 print("="*70)
+
+
+'''
+OUTPUT
+======================================================================
+SENSITIVITY ANALYSIS v2: Calibrated to AIMO3 Difficulty
+======================================================================
+
+5-comp entropy voting:  1388/1500 (92.5%)
+Plain majority vote:    1097/1500 (73.1%)
+Entropy advantage:      +19.4%
+
+Difficulty                N     5-comp   Majority        Δ
+----------------------------------------------------------
+easy                    554     100.0%     100.0%    +0.0%
+medium                  293     100.0%     100.0%    +0.0%
+hard                    143      21.7%       0.0%   +21.7%
+tie                     288     100.0%      48.6%   +51.4%
+minority_correct        222     100.0%      49.5%   +50.5%
+
+======================================================================
+TEST 1: Individual weight perturbation
+======================================================================
+
+Component                Factor   Flips   Flip%     Acc    ΔAcc
+--------------------------------------------------------------
+mean_entropy              0.00x      19    1.3%   93.8%   +1.3%
+mean_entropy              0.50x       1    0.1%   92.6%   +0.1%
+mean_entropy              0.75x       0    0.0%   92.5%   +0.0%
+mean_entropy              1.25x       2    0.1%   92.4%   -0.1%
+mean_entropy              1.50x       2    0.1%   92.4%   -0.1%
+mean_entropy              2.00x       2    0.1%   92.4%   -0.1%
+
+position_weighted         0.00x       2    0.1%   92.4%   -0.1%
+position_weighted         0.50x       2    0.1%   92.4%   -0.1%
+position_weighted         0.75x       2    0.1%   92.4%   -0.1%
+position_weighted         1.25x       0    0.0%   92.5%   +0.0%
+position_weighted         1.50x       0    0.0%   92.5%   +0.0%
+position_weighted         2.00x       1    0.1%   92.6%   +0.1%
+
+std_dev                   0.00x      21    1.4%   93.9%   +1.4%
+std_dev                   0.50x       3    0.2%   92.7%   +0.2%
+std_dev                   0.75x       1    0.1%   92.6%   +0.1%
+std_dev                   1.25x       2    0.1%   92.4%   -0.1%
+std_dev                   1.50x       2    0.1%   92.4%   -0.1%
+std_dev                   2.00x       2    0.1%   92.4%   -0.1%
+
+high_ent_ratio            0.00x       7    0.5%   92.1%   -0.5%
+high_ent_ratio            0.50x       2    0.1%   92.4%   -0.1%
+high_ent_ratio            0.75x       2    0.1%   92.4%   -0.1%
+high_ent_ratio            1.25x       0    0.0%   92.5%   +0.0%
+high_ent_ratio            1.50x       0    0.0%   92.5%   +0.0%
+high_ent_ratio            2.00x       1    0.1%   92.6%   +0.1%
+
+streak_bonus              0.00x       2    0.1%   92.4%   -0.1%
+streak_bonus              0.50x       2    0.1%   92.4%   -0.1%
+streak_bonus              0.75x       2    0.1%   92.4%   -0.1%
+streak_bonus              1.25x       0    0.0%   92.5%   +0.0%
+streak_bonus              1.50x       1    0.1%   92.6%   +0.1%
+streak_bonus              2.00x      16    1.1%   93.6%   +1.1%
+
+
+======================================================================
+TEST 2: Alternative voting methods
+======================================================================
+
+Method                      Correct     Acc    ΔAcc   Flips
+----------------------------------------------------------
+5-comp (default)               1388   92.5%   +0.0%       0
+Position only                  1391   92.7%   +0.2%      11
+Mean entropy only              1362   90.8%   -1.7%      26
+Mean + position                1381   92.1%   -0.5%       7
+No streak bonus                1386   92.4%   -0.1%       2
+No std penalty                 1409   93.9%   +1.4%      21
+Double position wt             1389   92.6%   +0.1%       1
+Half position wt               1386   92.4%   -0.1%       2
+No high_ent_ratio              1381   92.1%   -0.5%       7
+Plain majority vote            1097   73.1%  -19.4%     291
+
+======================================================================
+TEST 3: Monte Carlo (200 random ±50% perturbations, all 5 weights)
+======================================================================
+
+Flip rate:  mean=0.2%, median=0.1%, max=1.7%
+Acc delta:  mean=+0.08%, std=0.38%, range=[-0.33%, +1.73%]
+Improved: 68/200  Degraded: 101/200  Stable: 31/200
+
+======================================================================
+TEST 4: Flips by scenario type (position weight zeroed)
+======================================================================
+
+Scenario                    N   Flips    Rate
+--------------------------------------------
+easy                      554       0    0.0%
+medium                    293       0    0.0%
+hard                      143       2    1.4%
+tie                       288       0    0.0%
+minority_correct          222       0    0.0%
+
+======================================================================
+COMPLETE
+======================================================================
+'''
